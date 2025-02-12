@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Questions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .question {
+        margin: 15px 0;
+      }
+      input {
+        padding: 8px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Please Answer the Questions</h1>
+    <form method="POST">
+      <div>
+        {% for question in questions %}
+        <div class="question">
+          <p>{{ question }}</p>
+        </div>
+        {% endfor %}
+        <label for="marks">Enter your mock marks (out of 100):</label><br />
+        <input
+          type="number"
+          name="marks"
+          min="0"
+          max="100"
+          required
+        /><br /><br />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

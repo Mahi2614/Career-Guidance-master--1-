@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Recommendation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      .result {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Career Path Prediction</h1>
+    <p class="result">Your recommended stream: {{ career }}</p>
+    <p>Suggested career paths:</p>
+    <ul>
+      {% for option in options.split(', ') %}
+      <li>{{ option }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/">Take Test Again</a>
+  </body>
+</html>
